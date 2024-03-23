@@ -5,3 +5,6 @@ https://drive.google.com/drive/folders/1kHE6cqm0UfLt_6vmeW38WpI3Ti0xMAyH?usp=dri
 
 Link do worda z technologiami 
 https://docs.google.com/document/d/1dSyqrSKMrovZlTcpcRdO3RtwqI05NWoOLoD6JRjSgeQ/edit?usp=sharing
+
+AI Newsletter technology 
+https://docs.google.com/document/d/1lUMj5UCiYIsdB6NbZVIpWXN-ROYB013KqvdvYAjirEc/edit?usp=sharing
