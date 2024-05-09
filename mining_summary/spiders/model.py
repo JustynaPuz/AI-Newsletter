@@ -27,7 +27,7 @@ def generate_openai_completion(prompt):
     presence_penalty=0,
     stop=None
   )
-  return completion.choices[0].messagecontent
+  return completion.choices[0].message.content
 
 # 
 # import os
