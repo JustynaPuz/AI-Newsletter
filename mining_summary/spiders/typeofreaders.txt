@@ -1,0 +1,26 @@
+You have to summarize text in a specific way in max 5 sentences - like in an example
+You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
+
+Type of reader:
+Technology oriented (TO)
+
+Distinctive features and topics:
+new patents
+improvements in machine-tool technology
+technological innovations
+technological aspects of industry
+
+Typical article:
+HD Hyundai Construction Equipment Unveils Training Center Utilizing VR and Digital Twin Technologies
+SEOUL, Jan. 24 (Korea Bizwire) — HD Hyundai Construction Equipment has opened the doors to an innovative training center that utilizes virtual reality (VR) and digital twin technology for excavator operation instruction and product verification.
+The grand opening of the “Virtual Training Center” took place at the HD Hyundai Global R&D Center (GRC) in Pangyo, Gyeonggi Province, on January 23, with executives Cho Young-cheul and Lee Dong-wook in attendance, among others.
+The center is equipped with 15 RC models of excavators, incorporating the actual operational principles of construction equipment. It features a scaled-down indoor training area replicating real worksites at a 1:14 ratio, a VR experience zone inside an excavator cabin, and a remote-control station for construction equipment.
+HD Hyundai XiteSolution mentioned that wearing VR goggles in the indoor training area allows operators to drive RC models with a view identical to that from the cockpit of real machinery, offering an indirect field experience.
+Sitting in the excavator cabin in the VR experience zone, trainees can operate construction equipment in a virtual worksite, with on-screen guidance provided for the tasks.
+Additionally, the center has established a system that enables the remote control of actual construction equipment located in domestic sites such as the Boryeong testing ground, 130 kilometers away from the GRC.
+HD Hyundai XiteSolution plans to conduct training for its employees at this facility, aiming to enhance their understanding and interest in construction equipment.
+Moreover, the company plans to elevate product verification by leveraging digital twin technology. Based on actual fieldwork data, they will operate digital twin models and RC models in virtual space for product evaluation and use the gathered data to improve product quality.
+Kim Ki-hyung, head of HR Support at HD Hyundai XiteSolution, stated, “We have created a platform for construction equipment training and product verification by integrating digital innovation technologies with construction equipment RC models.”
+
+Typical summary of this article:
+HD Hyundai Construction Equipment has inaugurated a cutting-edge training center at the HD Hyundai Global R&D Center in Pangyo, utilizing virtual reality (VR) and digital twin technology to train operators and verify construction equipment products. The facility includes a miniature indoor training area, a VR experience zone, and a remote-control station, which simulate real construction site conditions at a 1:14 scale. Trainees can operate RC excavator models and real construction equipment remotely, mimicking actual operations with VR technology enhancing the training experience. Additionally, the center employs digital twin technology to simulate real-world equipment behavior using field data, aiming to improve product evaluation and quality. This integration of digital technologies is intended to boost employee expertise and interest in construction machinery, aligning with broader goals of enhancing training and product verification.

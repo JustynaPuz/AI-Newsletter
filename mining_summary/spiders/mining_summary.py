@@ -158,6 +158,23 @@ class MiningSpider(scrapy.Spider):
     db_name = 'newsletter'
     db = Database()
     connection = None
+    summary_instructions = ""
+
+    def __init__(self, *args, **kwargs):
+        super(MiningSpider, self).__init__(*args, **kwargs)
+        self.load_summary_instructions()
+
+    def load_summary_instructions(self):
+        # Load summary instructions from 'typeofreaders.txt' using UTF-8 encoding
+        with open('typeofreaders.txt', 'r', encoding='utf-8') as file:
+            lines = file.readlines()
+            # Assuming the specific summary instruction starts after a certain keyword in the file
+            start = False
+            for line in lines:
+                if "Typical summary of this article:" in line:
+                    start = True
+                if start:
+                    self.summary_instructions += line
 
     def start_requests(self):
         self.connection = self.db.connect_to_db(host_name, user_name, user_password, db_name)
@@ -186,26 +203,8 @@ class MiningSpider(scrapy.Spider):
         content = ' '.join(page_content)
         cleaned_content = self.clean_text(content)
 
-        # Save scrapy text to db
-        self.db.save_to_db(self.connection, WhatToSave.SCRAPY, 9, response.url, cleaned_content)
-
-        # Save original content to a file
-        raw_filename = f"{response.url.split('/')[-2]}_raw.txt"
-        with open(raw_filename, 'w', encoding='utf-8') as f:
-            f.write(cleaned_content)
-
         # Generate summary from the cleaned content
         summary = self.generate_summary(cleaned_content)
-
-        # get article id
-        article_id = self.db.get_article_id_by_link(self.connection, response.url)
-        category = "None"
-
-        if article_id:
-            print(f"Znaleziono ID: {article_id}")
-
-        # Save summary to db
-        self.db.save_to_db(self.connection, WhatToSave.SUMMARY, article_id, None, None, summary, category)
 
         # Save summary to a file
         summary_filename = f"{response.url.split('/')[-2]}_summary.txt"
@@ -218,15 +217,14 @@ class MiningSpider(scrapy.Spider):
         return text.strip()
 
     def generate_summary(self, text):
-        # Poprawione wywołanie funkcji generate_openai_completion
-        prompt = "Summarize this text in max 4 sentences: " + text
+        # Using the custom prompt from the loaded summary instructions
+        prompt = f"{self.summary_instructions}\n\n{text}"
         return generate_openai_completion(prompt)
 
     def closed(self):
         if self.connection and self.connection.is_connected():
             self.connection.close()
-            print("Połączenie z bazą danych zostało zamknięte")
-
+            print("Database connection closed")
 
 if __name__ == "__main__":
     process = CrawlerProcess()
