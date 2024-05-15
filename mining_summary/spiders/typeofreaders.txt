@@ -1,16 +1,24 @@
 You have to summarize text in a specific way in max 5 sentences - like in an example
 You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
 
-Type of reader:
+Type of reader(acronym):
 Technology oriented (TO)
+Purchasing oriented (PO)
 
 Distinctive features and topics:
+(TO):
 new patents
 improvements in machine-tool technology
 technological innovations
 technological aspects of industry
+(PO):
+Finances and accounting
+financials matters
+budget decisions
+company incomes and spendings
 
-Typical article:
+
+Typical article (TO):
 HD Hyundai Construction Equipment Unveils Training Center Utilizing VR and Digital Twin Technologies
 SEOUL, Jan. 24 (Korea Bizwire) — HD Hyundai Construction Equipment has opened the doors to an innovative training center that utilizes virtual reality (VR) and digital twin technology for excavator operation instruction and product verification.
 The grand opening of the “Virtual Training Center” took place at the HD Hyundai Global R&D Center (GRC) in Pangyo, Gyeonggi Province, on January 23, with executives Cho Young-cheul and Lee Dong-wook in attendance, among others.
@@ -22,5 +30,16 @@ HD Hyundai XiteSolution plans to conduct training for its employees at this faci
 Moreover, the company plans to elevate product verification by leveraging digital twin technology. Based on actual fieldwork data, they will operate digital twin models and RC models in virtual space for product evaluation and use the gathered data to improve product quality.
 Kim Ki-hyung, head of HR Support at HD Hyundai XiteSolution, stated, “We have created a platform for construction equipment training and product verification by integrating digital innovation technologies with construction equipment RC models.”
 
-Typical summary of this article:
+Typical summary of article (TO):
 HD Hyundai Construction Equipment has inaugurated a cutting-edge training center at the HD Hyundai Global R&D Center in Pangyo, utilizing virtual reality (VR) and digital twin technology to train operators and verify construction equipment products. The facility includes a miniature indoor training area, a VR experience zone, and a remote-control station, which simulate real construction site conditions at a 1:14 scale. Trainees can operate RC excavator models and real construction equipment remotely, mimicking actual operations with VR technology enhancing the training experience. Additionally, the center employs digital twin technology to simulate real-world equipment behavior using field data, aiming to improve product evaluation and quality. This integration of digital technologies is intended to boost employee expertise and interest in construction machinery, aligning with broader goals of enhancing training and product verification.
+
+Typical article (PO):
+Caterpillar Reports First-Quarter 2024 Results
+IRVING, Texas, April 25, 2024 – Caterpillar Inc. (NYSE: CAT) announced first-quarter 2024 results. Sales and revenues for the first quarter of 2024 were $15.8 billion, about flat to the first quarter of 2023, due to lower sales volume, which was mostly offset by favorable price realization.
+Operating profit margin was 22.3% for the first quarter of 2024, compared with 17.2% for the first quarter of 2023. Adjusted operating profit margin was 22.2% for the first quarter of 2024, compared with 21.1% for the first quarter of 2023. First-quarter 2024 profit per share was $5.75, compared with first-quarter 2023 profit per share of $3.74. Adjusted profit per share in the first quarter of 2024 was $5.60, compared with first-quarter 2023 adjusted profit per share of $4.91. In the first quarter of 2024 and 2023, adjusted operating profit margin and adjusted profit per share excluded restructuring income/costs.
+For the three months ended March 31, 2024, enterprise operating cash flow was $2.1 billion, and the company ended the first quarter with $5.0 billion of enterprise cash. In the quarter, the company deployed $4.5 billion of cash for repurchases of Caterpillar common stock and $0.6 billion of cash for dividends.
+“I’m pleased with our team’s performance that resulted in higher adjusted operating profit margin, record adjusted profit per share and strong ME&T free cash flow. Our strong balance sheet and ME&T free cash flow allowed us to deploy a record $5.1 billion of cash for share repurchases and dividends in the first quarter,” said Chairman and CEO Jim Umpleby. "We continue to execute our strategy for long-term profitable growth.”
+
+Typical summary of article (PO):
+Caterpillar Inc. reported its first-quarter results for 2024 with sales and revenues holding steady at $15.8 billion, a slight increase driven by favorable price realization despite a dip in sales volume. The company achieved a higher operating profit margin of 22.3% in 2024, up from 17.2% in 2023, reflecting efficient cost management and stronger pricing strategies. Adjusted earnings per share rose to a record $5.60, compared to $4.91 in the previous year, underscoring robust financial management. Caterpillar also demonstrated strong cash flow, ending the quarter with $5.0 billion in cash and returning a record $5.1 billion to shareholders through dividends and stock repurchases. CEO Jim Umpleby highlighted the company's sustained focus on long-term profitable growth through strategic capital deployment and operational efficiency.
+
