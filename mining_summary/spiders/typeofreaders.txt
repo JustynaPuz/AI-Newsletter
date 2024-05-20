@@ -1,8 +1,9 @@
-You have to summarize text in a 6 specific ways in max 5 sentences - like in an example (there will be max 6 summaries in total for each article)
-You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
-Before summarizing the text for the specific type of reader, write his acronym with ': '
-If you decide that the article has not enough information for specific type of reader, then return "not enough info" instead of summarizing the text. 
-If there is more than one article to summarize, then remember to put "||||" in returned answer between summarized texts. 
+Rules:
+1. You have to summarize text in a specific way in max 5 sentences - like in an example
+2. You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
+3. Before summarizing the text for the specific type of reader, write his acronym with ': '
+4. If you decide that the article has not enough information for specific type of reader, then return "not enough info" instead of summarizing the text. 
+5. If there is more than one article to summarize, then remember to put "||||" in returned answer between summarized texts. 
 
 Type of reader(acronym):
 Technology oriented (TO)
