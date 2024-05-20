@@ -1,5 +1,7 @@
 You have to summarize text in a specific way in max 5 sentences - like in an example
 You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
+If you decide that the article has not enough information for specific type of reader, then return "not enough info" instead of summarizing the text. 
+If there is more than one article to summarize, then remember to put "||||" in returned answer between summarized texts. 
 
 Type of reader(acronym):
 Technology oriented (TO)
