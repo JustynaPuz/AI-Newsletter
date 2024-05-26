@@ -5,23 +5,18 @@ services:
     restart: always
     environment:
       MYSQL_DATABASE: 'newsletter'
-      # So you don't have to use root, but you can if you like
       MYSQL_USER: 'newsletter'
-      # You can use whatever password you like
       MYSQL_PASSWORD: 'newsletter'
-      # Password for root access
       MYSQL_ROOT_PASSWORD: 'newsletter'
     ports:
       # <Port exposed> : <MySQL Port running inside container>
       - '3306:3306'
-    command: --init-file /docker-entrypoint-initdb.d/init_db.sql
     expose:
-      # Opens port 3306 on the container
+      # Opens port 3306 on the containern
       - '3306'
       # Where our data will be persisted
     volumes:
       - my-db:/var/lib/mysql
-      - ./init.sql:/docker-entrypoint-initdb.d/init_db.sql
 # Names our volume
 volumes:
   my-db:
