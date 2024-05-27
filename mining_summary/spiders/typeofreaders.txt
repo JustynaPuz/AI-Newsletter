@@ -1,33 +1,14 @@
-<<<<<<< HEAD
-You have to summarize text in a specific way in max 5 sentences - like in an example
-You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
-Before summarizing the text for the specific type of reader, write his acronym with ': '
-If you decide that the article has not enough information for specific type of reader, then return "not enough info" instead of summarizing the text. 
-If there is more than one article to summarize, then remember to put "||||" in returned answer between summarized texts.
-
-Summary Task Instructions:
-
-1.Read the provided text.
-2.Determine the type of reader based on distinctive features and topics. Write the reader's acronym followed by a colon before summarizing (e.g., "TO:").
-3.Summarize the text in a maximum of five sentences tailored to the identified reader type.
-4.If the article lacks sufficient information for the specified reader, return "not enough info".
-5.For multiple articles, separate summaries with "||||". 
-=======
 Rules:
-1. You have to summarize text in a specific way in max 5 sentences - like in an example
+1. You have to summarize text in a specific way in max 5 sentences - like in an example below
 2. You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
 3. Before summarizing the text for the specific type of reader, write his acronym with ': '
-4. If you decide that the article has not enough information for specific type of reader, then return "not enough info" instead of summarizing the text. 
+4. If you decide that the article has not enough information for specific type of reader, then you always MUST! return "not enough info" instead of summarizing the text.
 5. If there is more than one article to summarize, then remember to put "||||" in returned answer between summarized texts. 
->>>>>>> a82291c5b120c470dc32cd823ba4f068386167f2
 
 Type of reader(acronym):
 Technology oriented (TO)
 Purchasing oriented (PO)
 Regional (R)
-Services Oriented (SO)
-Focused on compact machines (FOCM)
-All other (AO)
 
 Distinctive features and topics:
 (TO):
@@ -48,24 +29,6 @@ Market Knowledge
 Geographically Specific Content
 Investment and Development Information
 Market Analysis and Industry Trends
-(SO):
-Communication Skills
-Problem-Solving Skills
-Customer Focus
-Technical Proficiency
-Teamwork
-(FOCM):
-Technical Expertise
-Problem-Solving Skills
-Attention to Detail
-Adaptability
-Customer Service Orientation
-(AO):
-Versatility and Adaptability
-Strong Communication Skills
-Organizational Skills
-Team Collaboration
-Initiative and Self-Motivation
 
 Typical article (TO):
 HD Hyundai Construction Equipment Unveils Training Center Utilizing VR and Digital Twin Technologies
@@ -112,41 +75,3 @@ HD Hyundai's subsidiaries run in-house children's daycare centers.
 
 Typical summary of article (R):
 R: HD Hyundai Co., a leading South Korean conglomerate, has introduced a new childcare leave system to enhance its appeal as a gender-inclusive workplace and support female employees in balancing their careers and family responsibilities. The initiative aims to double the female workforce to 30% by 2030, significantly up from 16.8% in 2023, by offering paid childcare leave for female employees with children aged six to eight for up to six months. This new leave is in addition to the existing parental leave and the statutory maternity leave provided under South Korean law. Furthermore, the company is committed to increasing female representation in managerial roles through targeted management training and coaching programs. These efforts are part of a broader strategy to improve workforce diversity and work-family balance, aligning with government efforts to address the country's critically low birth rates.
-
-Typical article (SO):
-Deere sees early strong demand for pay-as-you-go model in precision ag
-Deere is offering farmers more financing options for the company’s precision agriculture technology as lower equipment demand weighs on profits.
-The world’s largest seller of agriculture equipment launched a Solutions-as-a-Service approach for some of its technology offerings, executives said on an earnings call Thursday. The new business model essentially gives farmers a pay-as-you-go option, lowering upfront costs.
-“Our initial experiences have been extremely favorable, as we engage a broader range of customers with our technology,” Aaron Wetzel, vice president of production systems for production and precision ag, said on the call.
-The manufacturer has used the pay-as-you-go approach for its precision ag essentials kit, which allows farmers to upgrade their current equipment. Orders for the kit “exceeded our expectations,” CFO Josh Jepsen told investors.
-Solutions-as-a-Service will also likely be a key component in Deere’s recent partnership to link its farm equipment up with SpaceX satellites, Jepsen said. Satellite connectivity for farmers in remote areas opens the door for them to use even more precision tools down the line.
-“As you enable automation and enable autonomy, that comes with the combination of hardware and the potential for more of a SaaS solution as these things are getting better over time,” Jepsen said.
-Deere is working to establish more recurring streams of revenue as demand for traditional farm equipment sours. The company on Thursday cut its annual earnings guidance and is expecting a 15% reduction in net sales for 2024.
-
-Typical summary of article (SO):
-SO: Deere is adapting to shifting market conditions by introducing a Solutions-as-a-Service model, which offers a pay-as-you-go financing option for its precision agriculture technology. This approach is designed to reduce upfront costs for farmers and has already seen a positive reception, with orders for its precision ag essentials kit surpassing expectations. The new business model aligns with Deere's strategy to broaden customer engagement and enhance the utility of their products through innovative financing options. Additionally, Deere's recent collaboration with SpaceX to link farm equipment with satellites aims to enhance connectivity and utility of precision tools in remote areas, potentially leading to more automated and autonomous agricultural practices. Amidst these strategic shifts, Deere has revised its financial outlook for 2024, anticipating a 15% drop in net sales and has adjusted its annual earnings guidance downwards.
-
-Typical article (FOCM):
-John Deere Launches New Compact Tractor Series Targeting Small and Mid-Size Farms
-John Deere, the world-renowned leader in agricultural machinery, has just unveiled its latest addition to the compact machinery market—the 4000 Series Compact Tractors. This new series is specifically designed for small to mid-size farms and offers enhanced efficiency, durability, and versatility.
-The 4000 Series boasts advanced technology features including an improved hydraulic system, increased lift capacity, and the integration of John Deere's GreenTech software, which provides real-time analytics on machine performance and health diagnostics. These compact tractors are engineered to be more fuel-efficient and environmentally friendly, featuring the latest in emission control technologies.
-"We recognize the unique needs of small and mid-size farm operators," said Michael Henderson, Vice President of John Deere's Agriculture and Turf Division. "Our new 4000 Series Compact Tractors are designed to deliver the power and precision required by today's agricultural industry, packaged in a size that is ideal for smaller farm operations."
-In addition to technical upgrades, the 4000 Series tractors come equipped with comfortable, ergonomically designed cabins, enhancing operator comfort and reducing fatigue during long working hours. The series also offers a range of customizable attachments, including loaders, backhoes, and mowers, making it a versatile solution for a variety of farming tasks.
-The launch event, held at Deere & Company’s headquarters in Moline, was accompanied by live demonstrations of the tractors, showcasing their capabilities in handling various agricultural tasks efficiently.
-John Deere has announced that the 4000 Series Compact Tractors are now available for purchase through all authorized dealers, and customers can also benefit from a special financing offer available until the end of September 2024.
-For more information on the new compact tractor series or to request a demo, visit John Deere's official website or contact your local dealer.
-
-Typical summary of article (FOCM):
-FOCM: John Deere has introduced the 4000 Series Compact Tractors, a new line designed specifically for small to mid-size farms, emphasizing enhanced efficiency, durability, and versatility. These tractors feature advanced technologies such as an improved hydraulic system, increased lift capacity, and GreenTech software, which provides real-time analytics on machine performance. The tractors are built to be fuel-efficient and environmentally friendly, incorporating the latest emission control technologies. Additionally, the 4000 Series offers ergonomic cabins for operator comfort and a range of customizable attachments like loaders, backhoes, and mowers, making them adaptable for various farming tasks. Available now through authorized dealers, these tractors also come with a special financing offer valid until the end of September 2024.
-
-Typical article (AO):
-Major Tech Firm Expands Remote Work Options to Boost Employee Productivity and Satisfaction
-In a significant shift in corporate culture, a leading Silicon Valley tech firm has announced the expansion of its remote work policies to include more roles across the company. This decision comes after a year-long study that showed a marked improvement in employee productivity and job satisfaction when working from home.
-The company, which has remained at the forefront of the technology sector, conducted extensive surveys and found that 78% of its workforce reported higher productivity levels and improved work-life balance with remote working arrangements. In response, the firm has decided to make remote work a permanent option for all roles that do not require physical presence in the office.
-"Flexibility is the future of work," stated the company's CEO, Alex Martinez. "By allowing our employees to work from locations they find most comfortable, we are not only enhancing their ability to perform but are also attracting top talent who value the flexibility that our policies provide."
-Moreover, the company is investing in state-of-the-art digital collaboration tools to ensure that communication and teamwork are not compromised. These tools include advanced project management software, virtual reality meeting spaces, and enhanced cyber security measures to protect sensitive information.
-The initiative is part of a broader strategy to adapt to the changing dynamics of the workplace, where digital technology allows for effective collaboration across geographies. The company plans to monitor the impact of this policy closely and adjust strategies as needed to ensure that productivity and collaboration continue to rise.
-For more information on the remote work policy or to apply for a position, visit the company's official careers page.
-
-Typical summary of article (AO):
-AO: A major Silicon Valley tech firm has expanded its remote work policies to include more roles after a year-long study revealed improvements in employee productivity and satisfaction. The study showed that 78% of the workforce experienced higher productivity and a better work-life balance with remote working conditions. In response, the firm made remote work a permanent option for roles that do not necessitate a physical office presence. To support this shift, the company is investing in advanced digital collaboration tools, including project management software and virtual reality meeting spaces, to ensure seamless communication and teamwork. This initiative is part of a larger strategy to adapt to modern workplace dynamics and leverage digital technology for effective remote collaboration.
