@@ -1,15 +1,15 @@
-from enum import Enum, auto
-
-import scrapy
-from scrapy.crawler import CrawlerProcess
-import os
 import html
 import re
-import nltk
-from model import client  # Import klienta Azure OpenAI z model.py
-from model import generate_openai_completion
+from enum import Enum, auto
+
 import mysql.connector
+import nltk
+import scrapy
 from mysql.connector import Error
+from reportlab.lib.pagesizes import letter
+from scrapy.crawler import CrawlerProcess
+from reportlab.pdfgen import canvas
+from model import generate_openai_completion
 
 nltk.download('punkt')
 
@@ -24,7 +24,6 @@ class WhatToSave(Enum):
     ARTICLE = auto()
     SUMMARY = auto()
     SCRAPY = auto()
-
 
 class Database:
 
@@ -123,6 +122,7 @@ class Database:
         finally:
             cursor.close()
 
+
     def save_to_db(self, connection, parameter: WhatToSave, id, link, scrapy_text=None, summary=None, category=None):
         if connection is not None:
             if parameter == WhatToSave.LINK:
@@ -141,13 +141,43 @@ class Database:
         else:
             print("Nie udało się połączyć z bazą danych")
 
-    # # Dane, które chcesz zapisać
-    # id =2
-    # link = "http://example.com/article"
-    # scrapy_text = "Tutaj wpisz pobrany tekst"
+    def fetch_summaries_by_category(self, connection, category):
+        cursor = connection.cursor()
+        query = "SELECT a.link, a.id, ad.category, ad.summary FROM article a JOIN article_details ad ON a.id = ad.article_id "
+        try:
+            cursor.execute(query, (category,))
+            records = cursor.fetchall()
+            return records
+        except Error as e:
+            print(f"Błąd '{e}' podczas pobierania streszczeń")
+            return []
+        finally:
+            cursor.close()
+
+    def generate_pdf_by_category(self, connection, category):
+        records = self.fetch_summaries_by_category(connection, category)
+        if not records:
+            print(f"No summaries found for category {category}")
+            return
+
+        pdf_filename = f"{category}_newsletter.pdf"
+        c = canvas.Canvas(pdf_filename, pagesize = letter )
+        width, height = letter
+
+        y = height - 40
+        for link, summary in records:
+            text = f"{summary}\n{link}\n\n"
+            for line in text.split('\n'):
+                c.drawString(40, y, line)
+                y -= 14
+                if y < 40:
+                    c.showPage()
+                    y = height - 40
+
+        c.save()
+        print(f"PDF generated: {pdf_filename}")
 
     # Pamiętaj, aby zamknąć połączenie z bazą danych po zakończeniu
-
 
 class MiningSpider(scrapy.Spider):
     name = "mining_summary"
@@ -168,13 +198,7 @@ class MiningSpider(scrapy.Spider):
         # Load summary instructions from 'typeofreaders.txt' using UTF-8 encoding
         with open('typeofreaders.txt', 'r', encoding='utf-8') as file:
             lines = file.readlines()
-            # Assuming the specific summary instruction starts after a certain keyword in the file
-            start = False
-            for line in lines:
-                if "Typical summary of this article:" in line:
-                    start = True
-                if start:
-                    self.summary_instructions += line
+            self.summary_instructions = lines
 
     def start_requests(self):
         self.connection = self.db.connect_to_db(host_name, user_name, user_password, db_name)
@@ -203,6 +227,10 @@ class MiningSpider(scrapy.Spider):
         content = ' '.join(page_content)
         cleaned_content = self.clean_text(content)
 
+        # Save scrapy text to db
+        self.db.save_to_db(self.connection, WhatToSave.SCRAPY, None, response.url, cleaned_content)
+
+
         # Generate summary from the cleaned content
         summary = self.generate_summary(cleaned_content)
 
@@ -210,6 +238,27 @@ class MiningSpider(scrapy.Spider):
         summary_filename = f"{response.url.split('/')[-2]}_summary.txt"
         with open(summary_filename, 'w', encoding='utf-8') as f:
             f.write(summary)
+
+        parts={}
+
+        lines = summary.split("\n")
+        for line in lines:
+            if ":" in line:
+                key, value = line.split(":", 1)
+                parts[key.strip()] = value.strip()
+
+        article_id = self.db.get_article_id_by_link(self.connection, response.url)
+
+        if article_id:
+            print(f"Znaleziono ID: {article_id}")
+            # Save summary to db
+
+        for key,value in parts.items():
+            self.db.save_to_db(self.connection, WhatToSave.SUMMARY, article_id, None, None, value,key )
+
+        print(response.url)
+        for key,value in parts.items():
+            print(f"{key}:{value}")
 
     def clean_text(self, text):
         text = html.unescape(text)
@@ -225,6 +274,8 @@ class MiningSpider(scrapy.Spider):
         if self.connection and self.connection.is_connected():
             self.connection.close()
             print("Database connection closed")
+
+
 
 if __name__ == "__main__":
     process = CrawlerProcess()
