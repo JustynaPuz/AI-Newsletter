@@ -98,14 +98,16 @@ class Database:
         cursor = connection.cursor()
         query = "INSERT INTO article_details (article_id, category, summary) VALUES (%s, %s, %s)"
         args = (id, category, summary)
+        print(
+            f"Attempting to insert: ID={id}, Category={category}, Summary={summary[:30]}...")  # Print a snippet of summary
 
         try:
             cursor.execute(query, args)
             connection.commit()
-            print("Pomyślnie dodano artykuł do bazy danych")
+            print("Successfully added summary to the database.")
             return cursor.lastrowid
         except Error as e:
-            print(f"Błąd '{e}' podczas dodawania artykułu")
+            print(f"Error while inserting summary: {e}")
             return None
         finally:
             cursor.close()
@@ -131,21 +133,31 @@ class Database:
 
     def save_to_db(self, connection, parameter: WhatToSave, id, link, scrapy_text=None, summary=None, category=None):
         if connection is not None:
-            if parameter == WhatToSave.LINK:
-                article_id = self.insert_link(connection, link)
-            elif parameter == WhatToSave.ARTICLE:
-                article_id = self.insert_article(connection, id, link, summary)
-            elif parameter == WhatToSave.SCRAPY:
-                article_id = self.insert_scrapy_text(connection, link, scrapy_text)
-            elif parameter == WhatToSave.SUMMARY:
-                article_id = self.insert_summary(connection, id, category, summary)
+            cursor = connection.cursor()
+            try:
+                if parameter == WhatToSave.LINK:
+                    query = "INSERT INTO article (link) VALUES (%s)"
+                    args = (link,)
+                elif parameter == WhatToSave.ARTICLE:
+                    query = "INSERT INTO article (id, link, scrapy_text) VALUES (%s, %s, %s)"
+                    args = (id, link, scrapy_text)
+                elif parameter == WhatToSave.SCRAPY:
+                    query = "UPDATE article SET scrapy_text = %s WHERE link = %s"
+                    args = (scrapy_text, link)
+                elif parameter == WhatToSave.SUMMARY:
+                    query = "INSERT INTO article_details (article_id, category, summary) VALUES (%s, %s, %s)"
+                    args = (id, category, summary)
+                print(f"Executing query: {query} with args {args}")  # Debug print
 
-            if article_id is not None:
-                print(f"Dodano artykuł z ID: {article_id}")
-            else:
-                print("Nie udało się dodać artykułu")
+                cursor.execute(query, args)
+                connection.commit()
+                print(f"Data saved for {parameter}. ID: {id}, Category: {category}")
+            except Error as e:
+                print(f"Error while saving data for {parameter}: {e}")
+            finally:
+                cursor.close()
         else:
-            print("Nie udało się połączyć z bazą danych")
+            print("No database connection available.")
 
     # # Dane, które chcesz zapisać
     # id =2
