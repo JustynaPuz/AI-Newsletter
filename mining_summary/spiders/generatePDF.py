@@ -1,37 +1,30 @@
+import os
 from enum import Enum, auto
 
-import scrapy
-from reportlab.lib.pagesizes import letter
-from reportlab.lib.styles import getSampleStyleSheet
-from reportlab.pdfgen import canvas
-from reportlab.platypus import splitLines
-from scrapy.crawler import CrawlerProcess
-import os
-import html
-import re
-import nltk
-from model import client  # Import klienta Azure OpenAI z model.py
-from model import generate_openai_completion
 import mysql.connector
+import nltk
 from mysql.connector import Error
+from reportlab.lib.pagesizes import letter
+from reportlab.pdfgen import canvas
 
 nltk.download('punkt')
 
+# Database connection credentials
 host_name = 'localhost'
 user_name = 'newsletter'
 user_password = 'newsletter'
 db_name = 'newsletter'
 
 
+# Enum class defining different types of data to save in the PDF generation process
 class WhatToSave(Enum):
     LINK = auto()
     ARTICLE = auto()
     SUMMARY = auto()
     SCRAPY = auto()
 
-
+# Class to handle database operations
 class Database:
-
     def connect_to_db(self, host_name, user_name, user_password, db_name):
         connection = None
         try:
@@ -44,10 +37,9 @@ class Database:
             print("Połączenie z bazą danych MySQL udane")
         except Error as e:
             print(f"Błąd '{e}' podczas połączenia z bazą danych")
-
         return connection
 
-
+    # Fetch article summaries by category from the database
     def fetch_summaries_by_category(self, connection, category):
         cursor = connection.cursor()
         query = "SELECT a.link, a.id, ad.category, ad.summary FROM article a JOIN article_details ad ON a.id = ad.article_id WHERE ad.category = %s "
@@ -61,6 +53,7 @@ class Database:
         finally:
             cursor.close()
 
+# Generate a PDF file for a given category using summaries fetched from the database
     def generate_pdf_by_category(self, connection, category):
         records = self.fetch_summaries_by_category(connection, category)
         if not records:
@@ -80,7 +73,7 @@ class Database:
 
         c.setFont("Helvetica", 12)
 
-        # Funkcja do podziału tekstu na linie
+        # Function to split text into lines that fit within the specified width
         def wrap_text(text, width):
             from reportlab.pdfbase.pdfmetrics import stringWidth
             words = text.split()
@@ -128,7 +121,7 @@ class Database:
         c.save()
         print(f"PDF generated: {pdf_filename}")
 
-
+# Class to generate PDFs for specific categories
 class PDF():
     name = "mining_summary"
 
@@ -140,6 +133,7 @@ class PDF():
     connection = None
     summary_instructions = ""
 
+    # Start requests for PDF generation
     def start_requests(self):
         self.connection = self.db.connect_to_db(self.host_name, self.user_name, self.user_password, self.db_name)
         self.db.generate_pdf_by_category(self.connection, "R")
@@ -147,7 +141,6 @@ class PDF():
 
 
 if __name__ == "__main__":
-
     pdf_instance = PDF()
     pdf_instance.start_requests()
 
