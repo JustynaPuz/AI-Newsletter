@@ -1,0 +1,25 @@
+#Szablon dla strony głównej z formularzem i wynikami.
+
+{% extends "base.html" %}
+
+{% block content %}
+    <h1>AI-Based Newsletter</h1>
+    <form method="POST" action="{{ url_for('routes.index') }}">
+        {{ form.hidden_tag() }}
+        <div class="form-group">
+            {{ form.urls.label }}
+            {{ form.urls(class="form-control") }}
+        </div>
+        <div class="form-group">
+            {{ form.submit(class="btn btn-primary") }}
+        </div>
+    </form>
+    {% if summaries %}
+        <h2>Summaries</h2>
+        <ul>
+            {% for summary in summaries %}
+                <li>{{ summary }}</li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+{% endblock %}

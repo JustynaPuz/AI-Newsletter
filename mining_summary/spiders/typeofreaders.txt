@@ -1,77 +1,91 @@
-Rules:
-1. You have to summarize text in a specific way in max 5 sentences - like in an example below
-2. You are provided with this informations to help you to distinguish if the article is about topics that are useful for this type of reader
-3. Before summarizing the text for the specific type of reader, write his acronym with ': '
-4. If you decide that the article has not enough information for specific type of reader, then you always MUST! return "not enough info" instead of summarizing the text.
-5. If there is more than one article to summarize, then remember to put "||||" in returned answer between summarized texts. 
+Zasady:
+1. Streszczaj tekst w określony sposób w maksymalnie 5 zdaniach - jak w przykładzie.
+2. Poniższe informacje pomogą Ci rozróżnić, czy artykuł dotyczy tematów przydatnych dla danego typu czytelnika.
+3. Przed streszczeniem tekstu dla określonego typu czytelnika, napisz jego akronim z ': '.
+4. Jeśli uznasz, że artykuł nie zawiera wystarczających informacji dla określonego typu czytelnika, zamiast streszczenia zwróć "not enough info".
+5. Jeśli jest więcej niż jeden artykuł do streszczenia, pamiętaj, aby umieścić "||||" w zwróconej odpowiedzi między streszczonymi tekstami.
+6. Skup się na kluczowych innowacjach, postępach technologicznych i potencjalnym wpływie na branżę.
 
-Type of reader(acronym):
-Technology oriented (TO)
-Purchasing oriented (PO)
-Regional (R)
+Typy czytelników (akronim):
+Sztuczna Inteligencja i Uczenie Maszynowe (AI)
+Internet Rzeczy (IoT)
+Cyberbezpieczeństwo (CS)
+Robotyka i Automatyzacja (RA)
+Technologie Chmurowe (TC)
+Technologie Mobilne (TM)
+Biotechnologia (BT)
+Nanotechnologia (NT)
+Energetyka Odnawialna (EO)
+Technologie Kwantowe (TK)
 
-Distinctive features and topics:
-(TO):
-new patents
-improvements in machine-tool technology
-technological innovations
-technological aspects of industry
-Analytical Skills
-Innovation and Creativity
-(PO):
-Finances and accounting
-financials matters
-budget decisions
-company incomes and spendings
-Supplier Relationship Management
-Market Knowledge
-(R):
-Geographically Specific Content
-Investment and Development Information
-Market Analysis and Industry Trends
+Charakterystyczne cechy i tematy:
 
-Typical article (TO):
-HD Hyundai Construction Equipment Unveils Training Center Utilizing VR and Digital Twin Technologies
-SEOUL, Jan. 24 (Korea Bizwire) — HD Hyundai Construction Equipment has opened the doors to an innovative training center that utilizes virtual reality (VR) and digital twin technology for excavator operation instruction and product verification.
-The grand opening of the “Virtual Training Center” took place at the HD Hyundai Global R&D Center (GRC) in Pangyo, Gyeonggi Province, on January 23, with executives Cho Young-cheul and Lee Dong-wook in attendance, among others.
-The center is equipped with 15 RC models of excavators, incorporating the actual operational principles of construction equipment. It features a scaled-down indoor training area replicating real worksites at a 1:14 ratio, a VR experience zone inside an excavator cabin, and a remote-control station for construction equipment.
-HD Hyundai XiteSolution mentioned that wearing VR goggles in the indoor training area allows operators to drive RC models with a view identical to that from the cockpit of real machinery, offering an indirect field experience.
-Sitting in the excavator cabin in the VR experience zone, trainees can operate construction equipment in a virtual worksite, with on-screen guidance provided for the tasks.
-Additionally, the center has established a system that enables the remote control of actual construction equipment located in domestic sites such as the Boryeong testing ground, 130 kilometers away from the GRC.
-HD Hyundai XiteSolution plans to conduct training for its employees at this facility, aiming to enhance their understanding and interest in construction equipment.
-Moreover, the company plans to elevate product verification by leveraging digital twin technology. Based on actual fieldwork data, they will operate digital twin models and RC models in virtual space for product evaluation and use the gathered data to improve product quality.
-Kim Ki-hyung, head of HR Support at HD Hyundai XiteSolution, stated, “We have created a platform for construction equipment training and product verification by integrating digital innovation technologies with construction equipment RC models.”
+(AI):
+- Postępy w algorytmach uczenia maszynowego i deep learning
+- Zastosowania AI w przemyśle, medycynie i nauce
+- Etyka i odpowiedzialność w rozwoju AI
+- Przetwarzanie języka naturalnego i widzenie komputerowe
+- Wpływ AI na przyszłość pracy i społeczeństwa
 
-Typical summary of article (TO):
-TO: HD Hyundai Construction Equipment has inaugurated a cutting-edge training center at the HD Hyundai Global R&D Center in Pangyo, utilizing virtual reality (VR) and digital twin technology to train operators and verify construction equipment products. The facility includes a miniature indoor training area, a VR experience zone, and a remote-control station, which simulate real construction site conditions at a 1:14 scale. Trainees can operate RC excavator models and real construction equipment remotely, mimicking actual operations with VR technology enhancing the training experience. Additionally, the center employs digital twin technology to simulate real-world equipment behavior using field data, aiming to improve product evaluation and quality. This integration of digital technologies is intended to boost employee expertise and interest in construction machinery, aligning with broader goals of enhancing training and product verification.
+(IoT):
+- Rozwój sieci czujników i urządzeń połączonych
+- Zastosowania IoT w przemyśle 4.0, inteligentnych miastach i rolnictwie precyzyjnym
+- Protokoły komunikacyjne i standardy IoT
+- Analiza danych z urządzeń IoT w czasie rzeczywistym
+- Bezpieczeństwo i prywatność w ekosystemach IoT
 
-Typical article (PO):
-Caterpillar Reports First-Quarter 2024 Results
-IRVING, Texas, April 25, 2024 – Caterpillar Inc. (NYSE: CAT) announced first-quarter 2024 results. Sales and revenues for the first quarter of 2024 were $15.8 billion, about flat to the first quarter of 2023, due to lower sales volume, which was mostly offset by favorable price realization.
-Operating profit margin was 22.3% for the first quarter of 2024, compared with 17.2% for the first quarter of 2023. Adjusted operating profit margin was 22.2% for the first quarter of 2024, compared with 21.1% for the first quarter of 2023. First-quarter 2024 profit per share was $5.75, compared with first-quarter 2023 profit per share of $3.74. Adjusted profit per share in the first quarter of 2024 was $5.60, compared with first-quarter 2023 adjusted profit per share of $4.91. In the first quarter of 2024 and 2023, adjusted operating profit margin and adjusted profit per share excluded restructuring income/costs.
-For the three months ended March 31, 2024, enterprise operating cash flow was $2.1 billion, and the company ended the first quarter with $5.0 billion of enterprise cash. In the quarter, the company deployed $4.5 billion of cash for repurchases of Caterpillar common stock and $0.6 billion of cash for dividends.
-“I’m pleased with our team’s performance that resulted in higher adjusted operating profit margin, record adjusted profit per share and strong ME&T free cash flow. Our strong balance sheet and ME&T free cash flow allowed us to deploy a record $5.1 billion of cash for share repurchases and dividends in the first quarter,” said Chairman and CEO Jim Umpleby. "We continue to execute our strategy for long-term profitable growth.”
+(CS):
+- Zaawansowane techniki ochrony przed cyberatakami
+- Bezpieczeństwo systemów przemysłowych i infrastruktury krytycznej
+- Kryptografia i technologie blockchain w cyberbezpieczeństwie
+- Sztuczna inteligencja w wykrywaniu i zapobieganiu zagrożeniom
+- Regulacje i standardy cyberbezpieczeństwa na poziomie globalnym
 
-Typical summary of article (PO):
-PO: Caterpillar Inc. reported its first-quarter results for 2024 with sales and revenues holding steady at $15.8 billion, a slight increase driven by favorable price realization despite a dip in sales volume. The company achieved a higher operating profit margin of 22.3% in 2024, up from 17.2% in 2023, reflecting efficient cost management and stronger pricing strategies. Adjusted earnings per share rose to a record $5.60, compared to $4.91 in the previous year, underscoring robust financial management. Caterpillar also demonstrated strong cash flow, ending the quarter with $5.0 billion in cash and returning a record $5.1 billion to shareholders through dividends and stock repurchases. CEO Jim Umpleby highlighted the company's sustained focus on long-term profitable growth through strategic capital deployment and operational efficiency.
+(RA):
+- Postępy w robotyce przemysłowej i współpracującej (coboty)
+- Systemy automatyzacji procesów produkcyjnych
+- Sztuczna inteligencja w robotyce
+- Zastosowania robotów w medycynie, logistyce i eksploracji kosmosu
+- Wpływ robotyzacji na rynek pracy i ekonomię
 
-Typical article (R):
-HD Hyundai Co., the world’s largest shipbuilding group, will introduce a childcare leave system to make the male-dominated conglomerate an attractive workplace for women juggling career and family.
-The South Korean conglomerate, encompassing HD Korea Shipbuilding & Offshore Engineering Co., HD Hyundai Infracore Co. and HD Hyundai Oilbank Co., said on Thursday the new family-friendly system is aimed at doubling the number of female employees across the group to 30% by 2030 from 16.8% in 2023.
-The paid childcare leave will be offered to female employees with a child between the ages of six and eight for up to six months.
-That is separate from the parental leave of up to one year granted to working parents under the law, in addition to the statutory three-month maternity leave.
-The group’s subsidiaries with about 35,000 employees in total will also grant unpaid maternity leave for an additional month, alongside a cash gift of 5 million won ($3,800) per birth.
-South Korea’s total fertility rate hit a trough of 0.7 in the third quarter of this year
-South Korea’s total fertility rate hit a trough of 0.7 in the third quarter of this year
-CHILDBIRTH SUPPORT
-Female employees in their early and late stages of pregnancy will be able to reduce working hours and work from home.
-Couples struggling with infertility will be allowed to take a five-day leave for fertility treatment, two days more than the statutory three-day leave.
-FOSTERING FEMALE WORKERS
-HD Hyundai also announced plans to promote more female workers to managerial roles by providing them with more opportunities to participate in management training and coaching programs.
-The moves are in tandem with the government’s efforts to revive the birth rate already at the world’s lowest level.
-“We need to improve workforce diversity and work-family balance to achieve sustainable growth,” said Chung Kisun, president and chief executive of HD Hyundai.
-Starting this year, the group grants its employees a total of 18 million won in childcare subsidy per child for three years before entering elementary school.
-HD Hyundai's subsidiaries run in-house children's daycare centers.
+(TC):
+- Rozwój technologii edge computing i fog computing
+- Chmury hybrydowe i multi-cloud
+- Bezpieczeństwo i prywatność danych w chmurze
+- Zastosowania chmury w big data i sztucznej inteligencji
+- Innowacje w infrastrukturze centrów danych
 
-Typical summary of article (R):
-R: HD Hyundai Co., a leading South Korean conglomerate, has introduced a new childcare leave system to enhance its appeal as a gender-inclusive workplace and support female employees in balancing their careers and family responsibilities. The initiative aims to double the female workforce to 30% by 2030, significantly up from 16.8% in 2023, by offering paid childcare leave for female employees with children aged six to eight for up to six months. This new leave is in addition to the existing parental leave and the statutory maternity leave provided under South Korean law. Furthermore, the company is committed to increasing female representation in managerial roles through targeted management training and coaching programs. These efforts are part of a broader strategy to improve workforce diversity and work-family balance, aligning with government efforts to address the country's critically low birth rates.
+(TM):
+- Rozwój sieci 5G i przyszłe technologie 6G
+- Innowacje w projektowaniu smartfonów i urządzeń mobilnych
+- Aplikacje mobilne wykorzystujące AR i VR
+- Mobilne rozwiązania dla IoT i edge computing
+- Bezpieczeństwo i prywatność w technologiach mobilnych
+
+(BT):
+- Postępy w inżynierii genetycznej i edycji genów (CRISPR)
+- Medycyna spersonalizowana i terapie genowe
+- Biotechnologia w produkcji żywności i rolnictwie
+- Biokomputery i bioczujniki
+- Etyczne aspekty badań biotechnologicznych
+
+(NT):
+- Innowacje w materiałach nanostrukturalnych
+- Zastosowania nanotechnologii w elektronice i medycynie
+- Nanoroboty i ich potencjalne zastosowania
+- Nanotechnologia w produkcji energii i ochronie środowiska
+- Bezpieczeństwo i regulacje dotyczące nanomateriałów
+
+(EO):
+- Postępy w technologiach fotowoltaicznych i wiatrowych
+- Innowacyjne metody magazynowania energii
+- Inteligentne sieci energetyczne i zarządzanie energią
+- Wodór jako nośnik energii przyszłości
+- Polityka i ekonomia energetyki odnawialnej
+
+(TK):
+- Rozwój komputerów kwantowych i algorytmów kwantowych
+- Zastosowania technologii kwantowych w kryptografii i bezpieczeństwie
+- Czujniki kwantowe i ich zastosowania w medycynie i nawigacji
+- Komunikacja kwantowa i internet kwantowy
+- Wpływ technologii kwantowych na przyszłość obliczeń i przetwarzania danych

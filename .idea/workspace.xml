@@ -4,8 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="34225747-cb18-45f5-b37e-e2fc74e37020" name="Changes" comment="typeofr">
+    <list default="true" id="34225747-cb18-45f5-b37e-e2fc74e37020" name="Changes" comment="typeofreaders.txt">
+      <change afterPath="$PROJECT_DIR$/Newsletter_database/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Newsletter_database/news_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/forms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/routes.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/static/styles.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/base.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/templates/result.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/mining_summary/spiders/article_finder.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/news_api.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/text_processing.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Newsletter_database/init.sql" beforeDir="false" afterPath="$PROJECT_DIR$/Newsletter_database/init.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mining_summary/spiders/mining_summary.py" beforeDir="false" afterPath="$PROJECT_DIR$/mining_summary/spiders/mining_summary.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mining_summary/spiders/typeofreaders.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mining_summary/spiders/typeofreaders.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -35,6 +50,7 @@
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
+    <option name="showMembers" value="true" />
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
@@ -53,7 +69,7 @@
       <recent name="C:\Users\krbno\Documents\GitHub\AI-Newsletter\mining_summary\spiders" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.model">
+  <component name="RunManager" selected="Python.mining_summary">
     <configuration name="mining_summary" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="pythonProject2" />
       <option name="ENV_FILES" value="" />
@@ -113,7 +129,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-09665e90c3a7-d3b881c8e49f-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-233.15026.15" />
+        <option value="bundled-python-sdk-48aec45f0201-746f403e7f0c-com.jetbrains.pycharm.community.sharedIndexes.bundled-PC-241.17011.127" />
       </set>
     </attachedChunks>
   </component>
@@ -150,12 +166,43 @@
       <option name="project" value="LOCAL" />
       <updated>1715804518068</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="typeofreaders.txt">
+      <option name="closed" value="true" />
+      <created>1715869783235</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1715869783235</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="plik" />
     <MESSAGE value="typeofr" />
-    <option name="LAST_COMMIT_MESSAGE" value="typeofr" />
+    <MESSAGE value="typeofreaders.txt" />
+    <option name="LAST_COMMIT_MESSAGE" value="typeofreaders.txt" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/mining_summary/spiders/mining_summary.py</url>
+          <line>233</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>
