@@ -3,7 +3,7 @@ from openai import AzureOpenAI
 # Setup an AzureOpenAI client instance with specific credentials and endpoint
 client = AzureOpenAI(
   azure_endpoint = "https://newsletter.openai.azure.com/",
-  api_key = "7d06c511f9534eeda050215dd1706820",
+  api_key = "",
   api_version = "2024-02-15-preview"
 )
 
